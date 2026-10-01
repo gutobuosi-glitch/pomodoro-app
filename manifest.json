@@ -1,12 +1,19 @@
 {
-  "id": "/pomodoro-app/",
-  "name": "Pomodoro Cyberpunk",
+  "id": "/pomodoro-app/v2",
+  "name": "Pomodoro Cyber",
   "short_name": "Pomodoro",
-  "description": "Aplicativo de temporizador Pomodoro com tema Tron Cyberpunk",
-  "start_url": "/pomodoro-app/index.html",
+  "description": "Aplicativo de temporizador Pomodoro",
+  "start_url": "/pomodoro-app/index.html?v=2",
   "scope": "/pomodoro-app/",
   "display": "standalone",
   "background_color": "#0b0d12",
   "theme_color": "#0b0d12",
-  "orientation": "portrait"
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b0d12'/><circle cx='50' cy='50' r='35' fill='%23ff003c'/><path d='M40 30 Q50 20 60 30' stroke='%2300ffcc' stroke-width='8' fill='none'/></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
