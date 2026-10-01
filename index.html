@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Cyberpunk</title>
+    
+    <!-- Configurações PWA -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0b0d12">
+
+    <!-- Arquivos Externos -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Cabeçalho com Ícone Tomate Tron -->
+        <header>
+            <svg class="tomato-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <!-- Folha/Caule (Verde Neon) -->
+                <path d="M12 2C11.5 3.5 10 4.5 8 5C10.5 5.5 11.5 6.5 12 9C12.5 6.5 13.5 5.5 16 5C14 4.5 12.5 3.5 12 2Z" fill="none" stroke="#00ffcc" stroke-width="1.5" style="filter: drop-shadow(0 0 5px rgba(0,255,204,0.8));" />
+                <!-- Corpo do Tomate (Vermelho Neon) -->
+                <path d="M12 22C17 22 21 18.5 21 13.5C21 8.5 17.5 5.5 12 5.5C6.5 5.5 3 8.5 3 13.5C3 18.5 7 22 12 22Z" fill="rgba(255,0,60,0.1)" stroke="#ff003c" stroke-width="1.5" style="filter: drop-shadow(0 0 6px rgba(255,0,60,0.8));" />
+                <!-- Linhas Geométricas Internas -->
+                <path d="M7 10L12 15L17 10M12 15L12 22" fill="none" stroke="#ff003c" stroke-width="1" opacity="0.7" />
+                <path d="M4 14C6 16 8 18 12 18C16 18 18 16 20 14" fill="none" stroke="#ff003c" stroke-width="1" opacity="0.5" />
+            </svg>
+            <h1>Pomodoro</h1>
+        </header>
+
+        <!-- Card Principal -->
+        <main class="card">
+            <div class="modes-container">
+                <button class="mode-btn active" onclick="switchMode('pomodoro', event)">Pomodoro</button>
+                <button class="mode-btn" onclick="switchMode('shortBreak', event)">Pausa Curta</button>
+                <button class="mode-btn" onclick="switchMode('longBreak', event)">Pausa Longa</button>
+            </div>
+
+            <div class="timer-display" id="timer">30:00</div>
+
+            <div class="controls">
+                <button class="btn btn-primary" id="start-btn" onclick="toggleTimer()">Iniciar</button>
+                <button class="btn btn-secondary" onclick="resetTimer()">Reiniciar</button>
+            </div>
+
+            <!-- Banner de Permissões -->
+            <div class="notif-banner" id="notif-banner" style="display: none;">
+                <span>🔔 Ative notificações para receber alertas na tela.</span>
+                <button onclick="requestNotificationPermission()">Ativar</button>
+            </div>
+
+            <!-- Configurações de Tempo -->
+            <div class="settings-toggle" onclick="toggleSettings()">
+                <span>⚙️ Ajustar Duração (minutos)</span>
+                <span id="toggle-arrow">▼</span>
+            </div>
+
+            <div class="settings-panel hidden" id="settings-panel">
+                <div class="input-group">
+                    <label>Pomodoro</label>
+                    <input type="number" id="input-pomodoro" value="30" min="1" max="120" onchange="updateCustomTimes()">
+                </div>
+                <div class="input-group">
+                    <label>P. Curta</label>
+                    <input type="number" id="input-short" value="5" min="1" max="60" onchange="updateCustomTimes()">
+                </div>
+                <div class="input-group">
+                    <label>P. Longa</label>
+                    <input type="number" id="input-long" value="15" min="1" max="60" onchange="updateCustomTimes()">
+                </div>
+            </div>
+        </main>
+
+        <!-- Bloco de Notas -->
+        <section class="card notes-card">
+            <h2>Notas da Sessão</h2>
+            <textarea id="notes-input" placeholder="Digite suas notas, tarefas concluídas ou observações aqui..."></textarea>
+            <button class="btn-submit" onclick="exportNotes()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Submeter (Salvar em .txt)
+            </button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
