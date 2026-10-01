@@ -261,6 +261,13 @@ function exportNotes() {
     URL.revokeObjectURL(url);
 }
 
+// Registo do Service Worker para PWA
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js')
+    .then(() => console.log('Service Worker registrado com sucesso!'))
+    .catch(err => console.error('Erro ao registrar Service Worker:', err));
+}
+
 // Inicialização
 updateDisplay();
 checkNotificationPermission();
