@@ -1,9 +1,9 @@
 {
-  "id": "pomodoro-cyber-v5",
+  "id": "pomodoro-app-v6",
   "name": "Pomodoro Cyber",
   "short_name": "Pomodoro",
-  "description": "Aplicativo de temporizador Pomodoro",
-  "start_url": "/pomodoro-app/index.html",
+  "description": "Aplicativo Pomodoro",
+  "start_url": "/pomodoro-app/index.html?pwa=true",
   "scope": "/pomodoro-app/",
   "display": "standalone",
   "background_color": "#0b0d12",
