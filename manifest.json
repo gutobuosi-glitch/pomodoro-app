@@ -1,5 +1,5 @@
 {
-  "id": "pomodoro-cyber-v4",
+  "id": "pomodoro-cyber-v5",
   "name": "Pomodoro Cyber",
   "short_name": "Pomodoro",
   "description": "Aplicativo de temporizador Pomodoro",
@@ -11,7 +11,7 @@
   "icons": [
     {
       "src": "icon.svg",
-      "sizes": "512x512",
+      "sizes": "192x192 512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     }
