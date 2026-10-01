@@ -1,0 +1,12 @@
+{
+  "id": "/pomodoro-app/",
+  "name": "Pomodoro Cyberpunk",
+  "short_name": "Pomodoro",
+  "description": "Aplicativo de temporizador Pomodoro com tema Tron Cyberpunk",
+  "start_url": "/pomodoro-app/index.html",
+  "scope": "/pomodoro-app/",
+  "display": "standalone",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12",
+  "orientation": "portrait"
+}
